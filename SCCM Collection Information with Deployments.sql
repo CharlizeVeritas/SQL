@@ -150,9 +150,6 @@ left join v_UpdateInfo as UI on UI.ModelId = DS.ModelID
 WHERE COL.SiteID not like 'SMS%'
 	and COL.CollectionName not in (Select Name from @ExcludeCollections)
 	and COL.CollectionName like '%' + @CollectionName + '%'
-	--and Vaa.AssignedCI_UniqueID = 'ScopeId_DB12B12E-92D0-4F27-8B63-D0F6AB1A82BC/Application_98770eeb-4027-4ab1-9a81-35b7216d5abb/3'
-	--and DS.PackageID ='EST007AD'
-	--and Ds.FeatureType = 6
 ) as MainTable
 Where MainTable.ConsolePath not in (Select folder from @ExcludeFolders)
 ORDER By MainTable.CollectionName
