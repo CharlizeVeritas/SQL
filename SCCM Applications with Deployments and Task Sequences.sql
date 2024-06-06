@@ -45,7 +45,6 @@ SELECT * FROM
 		END as CreatedWithin5Years
 	,RIGHT(LDT.LastModifiedBy,CHARINDEX('\',REVERSE(LDT.LastModifiedBy))-1) as LastModifiedBy
 	,LDT.DateLastModified as DateLastModified
-	--,'\Software Library\Overview\Application Management\Applications' + REPLACE(SF.FolderPath,'/','\') as ConsolePath
 	,CASE
 		WHEN SF.FolderPath is null THEN '\Software Library\Overview\Application Management\Applications'
 		ELSE '\Software Library\Overview\Application Management\Applications' + REPLACE(SF.FolderPath,'/','\')
